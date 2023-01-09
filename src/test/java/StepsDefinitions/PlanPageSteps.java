@@ -66,4 +66,36 @@ public class PlanPageSteps extends BaseTest {
     public void user_buy_now_good_health_plan() {
         pageObjectManager.getPlanPage().selectOnGoodHealthPlan();
     }
+
+    @Then("^user create plan for above thirty years and diabetes patient$")
+    public void user_create_plan_for_above_thirty_years_and_diabetes_patient()  {
+        pageObjectManager.getPlanPage().clickOnAbove30AgeButton();
+        pageObjectManager.getPlanPage().clickOnDiseasesButton();
+        pageObjectManager.getPlanPage().clickOnPhysicalActivityButton();
+        pageObjectManager.getPlanPage().clickOnDenySmokeButton();
+        pageObjectManager.getPlanPage().clickOnDenyConsumeAlcohol();
+        pageObjectManager.getPlanPage().clickOnGetPlanButton();
+    }
+
+    @Then("^user create plan for under thirty years smoker and drinker$")
+    public void user_create_plan_for_under_thirty_years_smoker_and_drinker() {
+        pageObjectManager.getPlanPage().clickOnAgeButton();
+        pageObjectManager.getPlanPage().clickOnDiseasesButton();
+        pageObjectManager.getPlanPage().clickOnPhysicalActivityButton();
+        pageObjectManager.getPlanPage().clickOnSmokeButton();
+        pageObjectManager.getPlanPage().clickOnConsumeAlcohol();
+        pageObjectManager.getPlanPage().clickOnGetPlanButton();
+
+    }
+
+    @Then("^user create plan for above thirty years lazy person$")
+    public void user_create_plan_for_above_thirty_years_lazy_person()  {
+        pageObjectManager.getPlanPage().clickOnAbove30AgeButton();
+        pageObjectManager.getPlanPage().clickOnDenyExistingDiseasesButton();
+        pageObjectManager.getPlanPage().clickOnDenyPhysicalActivityButton();
+        pageObjectManager.getPlanPage().clickOnDenySmokeButton();
+        pageObjectManager.getPlanPage().clickOnDenyConsumeAlcohol();
+        pageObjectManager.getPlanPage().clickOnGetPlanButton();
+    }
+
 }

@@ -35,3 +35,37 @@ Feature: Raindrops functionality Test Cases
     And user insert payment details
     And user click on submit button
     And user can verify the submission
+
+  @PlanPage
+  Scenario: Verify to Health Plan for Above 30 Years Diabetes Patient
+    Given launch the environment
+    When user click on plan page
+    Then user create plan for above thirty years and diabetes patient
+    And user is landing successfully and plan page is displayed
+    And user buy now good health plan
+    And user insert payment details
+    And user click on submit button
+    And user can verify the submission
+
+
+  @PlanPage
+  Scenario: Verify to Health Plan for Under 30 Years Smoker and Alcohol Drinker
+    Given launch the environment
+    When user click on plan page
+    Then user create plan for under thirty years smoker and drinker
+    And user is landing successfully and plan page is displayed
+    And user buy now good health plan
+    And user insert payment details
+    And user click on submit button
+    And user can verify the submission
+
+  @PlanPage
+  Scenario: Verify to Care Life Plan Above 30 Years Lazy Person
+    Given launch the environment
+    When user click on plan page
+    Then user create plan for above thirty years lazy person
+    And user is landing successfully and plan page is displayed
+    And user buy now care life plan
+    And user insert payment details
+    And user click on submit button
+    And user can verify the submission
