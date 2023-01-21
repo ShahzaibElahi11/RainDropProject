@@ -1,7 +1,7 @@
 package Runner;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -9,10 +9,15 @@ import org.testng.annotations.Test;
 @CucumberOptions(
         features = "src/test/java/Features",
         glue = {"StepsDefinitions"},
-//		tags = "@Regression",
-        plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:target/TestReport.html","html:target/HTML-Report.html", "json:target/cucumber.json","pretty"}
+        //	tags = "@Shahzaib",
+        plugin = {"pretty", "html:target/TestReport.html", "json:target/cucumber.json",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+        dryRun = false,
+        monochrome = true,
+        publish = true
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
-    @BeforeSuite
-    public void beforeSuit(){}
+//    @BeforeSuite
+//    public void beforeSuit() {
+//    }
 }

@@ -20,7 +20,7 @@ public class AboutPage extends BaseTest {
     public WebElement aboutPage;
 
     public void clickOnAboutTab() {
-        clickElement(aboutPage, "User Click on About Page on Header");
+        clickElement(aboutPage,     "User Click on About Page on Header");
     }
 
     public boolean isAboutPageDisplayed() {
